@@ -1,0 +1,229 @@
+@import 'reset', 'temps', 'vars', 'mixins', 'fonts';
+
+.header {
+
+    .container {
+        @extend %flexCenter;
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+    &__logo {
+        @extend %flexCenter;
+    }
+
+    &__menu {
+        @extend %flexCenter;
+        gap: 40px;
+
+        .nav {
+            &__item {
+                @include setFontStyle ('Lato', 14px, 400, #000, 0);
+                position: relative;
+                text-transform: uppercase;
+                letter-spacing: 0.3em;
+
+                &:hover {
+                    cursor: pointer;
+
+                    &::after {
+                        @include createLine;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &__btn {
+        width: 20px;
+        height: 20px;
+        background: url("../source/img/header/search.png") no-repeat center;
+    }
+
+    &__title {
+        position: relative;
+        margin-bottom: 90px;
+    }
+
+    .title {
+        &__img {
+            width: 100%;
+        }
+
+        &__title {
+            max-width: 1100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 100px 220px;
+            @include setFontStyle ('Red Hat Display', 48px, 600, #000, 0);
+
+        }
+
+    }
+}
+
+.main {
+    max-width: 1070px;
+    margin: 0 auto;
+}
+
+.section {
+    @extend %flexCenter;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 90px;
+
+    &__title {
+        @include setFontStyle ('Red Hat Display', 48px, 400, #000, 50px);
+        align-self: flex-start;
+
+        &-small {
+            @include setFontStyle ('Red Hat Display', 48px, 400, #000, 50px);
+            font-size: 28px;
+        }
+
+        &-arrow {
+            @include setFontStyle ('Lato', 16px, 400, #7B7B7B, 50px);
+        }
+
+        &-wide {
+            @extend %flexCenter;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+    
+    &__info {
+        @extend %flexCenter;
+        gap: 200px;
+        margin-bottom: 90px;
+
+        & .info__title {
+            @include setFontStyle ('Red Hat Display', 23px, 400, #565656, 15px)
+        }
+
+        & .info__text {
+        @include setFontStyle ('Lato', 19px, 400, #565656, 15px)
+        }
+    }
+}
+
+.article {
+    @extend %flexCenter;
+
+    &__content {
+        @include setFontStyle ('Lato', 16px, 400, #7B7B7B, 0);
+        padding: 85px 120px 85px 30px;
+    }
+
+    &__sup {
+        margin-bottom: 30px;
+
+        &-wide {
+            @extend %flexCenter;
+            justify-content: space-between;
+        }
+    }
+
+    &__sub {
+        margin-bottom: 50px;
+    }
+
+    &__title {
+        @include setFontStyle ('Red Hat Display', 23px, 500, #000, 15px);
+
+    }
+}
+
+.arrow__btn {
+    width: 30px;
+    height: 10px;
+    background: url('../source/img/main/arrow1.png') no-repeat center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.3);
+    }
+}
+
+.cards__triple {
+    @extend %flexCenter;
+    gap: 25px;
+    margin-bottom: 100px;
+}
+
+.cards__double {
+    @extend %flexCenter;
+    gap: 25px;
+    margin-bottom: 90px;
+
+    & .card-big {
+        width: 570px;
+        height: 500px;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    height: 500px;
+    gap: 25px;
+
+    &__sup {
+        @include setFontStyle ('Lato', 12px, 400, #7B7B7B, 0);
+        @extend %flexCenter;
+    }
+
+    .text {
+        &__title {
+            @include setFontStyle ('Red Hat Display', 22px, 500, #000, 15px)
+        }
+
+        &__text {
+            @include setFontStyle ('Lato', 16px, 400, #7B7B7B, 0)
+        }
+    }
+}
+
+.learn {
+    @include setFontStyle('Lato', 16px, 700, #fff, 90px);
+    display: flex;
+    background: #565656;
+    padding: 10px 45px;
+    margin: 0 auto 90px auto;
+}
+
+.footer {
+    max-width: 1070px;
+    margin: 0 auto;
+
+    & .contacts {
+    @extend %flexCenter;
+    flex-direction: column;
+
+        &__title {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+&.socials {
+    @extend %flexCenter;
+    width: 270px;
+    height: 50px;
+    &__svg {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        background: #5DCBE6;
+
+        &:hover {
+            background: #fff;
+            stroke: $hover-color;
+        }
+    }
+}
