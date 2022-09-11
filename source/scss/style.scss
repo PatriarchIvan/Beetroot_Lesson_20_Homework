@@ -211,8 +211,8 @@
     }
 }
 
-&.socials {
-    @extend %flexCenter;
+    .socials {
+        @extend %flexCenter;
     width: 270px;
     height: 50px;
     &__svg {
