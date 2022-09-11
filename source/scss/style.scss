@@ -17,6 +17,10 @@
         @extend %flexCenter;
         gap: 40px;
 
+        @media (max-width: 767.98px) {
+            display: none;
+        }
+
         .nav {
             &__item {
                 @include setFontStyle ('Lato', 14px, 400, #000, 0);
@@ -45,6 +49,10 @@
     &__title {
         position: relative;
         margin-bottom: 90px;
+
+        @media (max-width: 767.98px) {
+            margin-bottom: 30px;
+        }
     }
 
     .title {
@@ -53,13 +61,22 @@
         }
 
         &__title {
+            @include setFontStyle ('Red Hat Display', 48px, 600, #000, 0);
             max-width: 1100px;
             position: absolute;
             top: 0;
             left: 0;
             padding: 100px 220px;
-            @include setFontStyle ('Red Hat Display', 48px, 600, #000, 0);
 
+            @media (max-width: 767.98px) {
+                padding: 30px 60px;
+                font-size: 40px;
+            }
+
+            @media (max-width: 499.98px) {
+                padding: 10px 25px;
+                font-size: 30px;
+            }
         }
 
     }
@@ -80,13 +97,25 @@
         @include setFontStyle ('Red Hat Display', 48px, 400, #000, 50px);
         align-self: flex-start;
 
+        @media (max-width: 767.98px) {
+            margin-bottom: 5px;
+        }
+
         &-small {
             @include setFontStyle ('Red Hat Display', 48px, 400, #000, 50px);
             font-size: 28px;
+
+            @media (max-width: 767.98px) {
+                margin-bottom: 5px;
+            }
         }
 
         &-arrow {
             @include setFontStyle ('Lato', 16px, 400, #7B7B7B, 50px);
+
+            @media (max-width: 767.98px) {
+                margin-bottom: 5px;
+            }
         }
 
         &-wide {
@@ -95,7 +124,7 @@
             justify-content: space-between;
         }
     }
-    
+
     &__info {
         @extend %flexCenter;
         gap: 200px;
@@ -106,7 +135,7 @@
         }
 
         & .info__text {
-        @include setFontStyle ('Lato', 19px, 400, #565656, 15px)
+            @include setFontStyle ('Lato', 19px, 400, #565656, 15px)
         }
     }
 }
@@ -195,35 +224,68 @@
     background: #565656;
     padding: 10px 45px;
     margin: 0 auto 90px auto;
+    transition: all 0.3s ease;
+    border: 1px solid #565656;
+
+    &:hover {
+        transform: scale(1.2);
+        background: #fff;
+        color: #000;
+    }
 }
 
 .footer {
+    @extend %flexCenter;
     max-width: 1070px;
+    flex-wrap: wrap;
     margin: 0 auto;
 
     & .contacts {
-    @extend %flexCenter;
-    flex-direction: column;
+        @extend %flexCenter;
+        flex-direction: column;
 
         &__title {
-            margin-bottom: 30px;
+            @include setFontStyle('Red Hat Display', 48px, 400, #000, 30px);
+            line-height: 64px;
         }
+
+        &__tel,
+        &__mail {
+            @include setFontStyle('Lato', 16px, 400, #565656, 15px);
+            align-self: flex-start
+        }
+
     }
-}
+
+    &__copyright {
+        flex-basis: 100%;
+        text-align: center;
+        margin: 15px auto;
+    }
+
+    & .copyright__text {
+        @include setFontStyle('Lato', 12px, 400, #000, 15px);
+    }
 
     .socials {
         @extend %flexCenter;
-    width: 270px;
-    height: 50px;
-    &__svg {
-        width: 40px;
-        height: 40px;
-        padding: 8px;
-        background: #5DCBE6;
+        gap: 10px;
+        width: 250px;
+        height: 42px;
 
-        &:hover {
+        &__svg {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #565656;
             background: #fff;
-            stroke: $hover-color;
+            fill: #565656;
+
+            &:hover {
+                fill: #fff;
+                background: #565656;
+                cursor: url("../source/img/icons/cursor2030.png"), pointer;
+            }
         }
     }
+
 }
