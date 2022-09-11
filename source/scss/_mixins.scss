@@ -1,0 +1,17 @@
+@mixin createLine {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 1px;
+    background: #000;
+    left: 15%;
+    bottom: -5px;
+}
+
+@mixin setFontStyle ($family, $size, $weight, $color, $margin) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    color:$color;
+    margin-bottom: $margin;
+}

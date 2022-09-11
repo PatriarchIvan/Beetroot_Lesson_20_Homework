@@ -142,14 +142,22 @@
 
 .article {
     @extend %flexCenter;
+    justify-content: space-between;
+    gap: 30px;
 
     &__content {
         @include setFontStyle ('Lato', 16px, 400, #7B7B7B, 0);
-        padding: 85px 120px 85px 30px;
+        padding: 85px 100px 85px 30px;
+        @media (max-width: 767.98px) {
+            padding: 0px;
+            }
     }
 
     &__sup {
         margin-bottom: 30px;
+        @media (max-width: 767.98px) {
+            margin: 0px;
+            }
 
         &-wide {
             @extend %flexCenter;
@@ -159,11 +167,29 @@
 
     &__sub {
         margin-bottom: 50px;
+        @media (max-width: 767.98px) {
+            margin: 0px;
+            }
     }
 
     &__title {
         @include setFontStyle ('Red Hat Display', 23px, 500, #000, 15px);
+        @media (max-width: 767.98px) {
+            margin: 0px;
+            }
+    }
 
+    &__img {
+        gap: 30px;
+    }
+    &__img .img {
+        width: 530px;
+        height: 470px;
+
+        @media (max-width: 767.98px) {
+        width: 340px;
+        height: 280px;
+        }
     }
 }
 
@@ -182,12 +208,18 @@
     @extend %flexCenter;
     gap: 25px;
     margin-bottom: 100px;
+    @media (max-width: 767.98px) {
+        flex-direction: column;
+        }
 }
 
 .cards__double {
     @extend %flexCenter;
     gap: 25px;
     margin-bottom: 90px;
+    @media (max-width: 767.98px) {
+        flex-direction: column;
+        }
 
     & .card-big {
         width: 570px;
@@ -202,6 +234,10 @@
     height: 500px;
     gap: 25px;
 
+    @media (max-width: 767.98px) {
+        width: 280px;
+        height: 340px;
+    }
     &__sup {
         @include setFontStyle ('Lato', 12px, 400, #7B7B7B, 0);
         @extend %flexCenter;
