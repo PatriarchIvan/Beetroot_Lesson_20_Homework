@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-.section-info, .card__supheader, .card, .cards, .article__content, .article, .title__link, .title-arrow, .header .nav .menu, .header__logo, .header {
+.title__link, .title-arrow, .footer .section-socials, .footer .section-contacts, .footer, .main .section-info, .main .card__supheader, .main .card, .main .cards, .main .article__content, .main .article, .header .nav .menu, .header__logo, .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -221,6 +221,155 @@ body {
 .main {
   padding: 40px calc(50% - 585px);
 }
+.main .article {
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 400;
+  color: #565656;
+  margin-bottom: 0;
+}
+.main .article__content {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px 85px 120px 85px;
+}
+.main .cards {
+  gap: 30px;
+}
+.main .card {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-bottom: 60px;
+  height: 500px;
+  gap: 25px;
+}
+.main .card-big {
+  gap: 33px;
+}
+.main .card__supheader {
+  font-family: "Lato";
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #565656;
+  margin-bottom: 0;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  width: 100%;
+}
+.main .btn {
+  font-family: "Lato";
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 50px auto 90px auto;
+  background: #565656;
+  padding: 10px 45px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid #565656;
+}
+.main .btn:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  background: #fff;
+  color: #000;
+}
+.main .arrow__btn {
+  width: 30px;
+  height: 10px;
+  background: url("../source/img/main/arrow1.png") no-repeat center;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.main .arrow__btn:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.main .section-info {
+  margin-bottom: 90px;
+}
+.main .section-info .info__title {
+  max-width: 450px;
+  font-family: "Red Hat Display";
+  font-size: 1.43rem;
+  font-weight: 500;
+  color: #565656;
+  margin-bottom: 20px;
+}
+.main .section-info .info__text {
+  max-width: 470px;
+  font-size: 1.1875rem;
+}
+.main .section-info .info__text > p {
+  margin-bottom: 30px;
+}
+
+.footer {
+  max-width: 1070px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+}
+.footer .section-contacts {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.footer .copyright__text {
+  font-family: "Lato";
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+.footer .section-socials {
+  gap: 10px;
+  width: 250px;
+  height: 42px;
+}
+.footer .section-socials .socials__svg {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #565656;
+  background: #fff;
+  fill: #565656;
+}
+.footer .section-socials .socials__svg:hover {
+  fill: #fff;
+  background: #565656;
+  cursor: pointer;
+}
 
 .title {
   line-height: 38.18px;
@@ -294,110 +443,4 @@ body {
 }
 .title__link > img {
   margin-left: 10px;
-}
-
-.article {
-  font-family: "Lato";
-  font-size: 16px;
-  font-weight: 400;
-  color: #565656;
-  margin-bottom: 0;
-}
-.article__content {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 30px 85px 120px 85px;
-}
-
-.cards {
-  gap: 30px;
-}
-
-.card {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  padding-bottom: 60px;
-  height: 500px;
-  gap: 25px;
-}
-.card-big {
-  gap: 33px;
-}
-.card__supheader {
-  font-family: "Lato";
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #565656;
-  margin-bottom: 0;
-  -webkit-box-align: initial;
-      -ms-flex-align: initial;
-          align-items: initial;
-  width: 100%;
-}
-
-.btn {
-  font-family: "Lato";
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 90px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 50px auto 90px auto;
-  background: #565656;
-  padding: 10px 45px;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  border: 1px solid #565656;
-}
-.btn:hover {
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
-  background: #fff;
-  color: #000;
-}
-
-.arrow__btn {
-  width: 30px;
-  height: 10px;
-  background: url("../source/img/main/arrow1.png") no-repeat center;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-}
-.arrow__btn:hover {
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-.section-info .info__title {
-  max-width: 450px;
-  font-family: "Red Hat Display";
-  font-size: 1.43rem;
-  font-weight: 500;
-  color: #565656;
-  margin-bottom: 20px;
-}
-.section-info .info__text {
-  max-width: 470px;
-  font-size: 1.1875rem;
-}
-.section-info .info__text > p {
-  margin-bottom: 30px;
 }

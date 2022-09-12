@@ -5,79 +5,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RWD</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-
     <header class="header">
-        <nav class="nav container">
-            <div class="header__logo">
-                <img class="logo__img" src="./source/img/header/logo.png" alt="logo">
-            </div>
-            <ul class="header__menu nav">
-                <li class="nav__item">Home</li>
-                <li class="nav__item">about</li>
-                <li class="nav__item">works</li>
-                <li class="nav__item">Blog</li>
-                <li class="nav__item">contacts</li>
+        <div class="header__logo">
+            <img class="header__img" src="./source/img/header/logo.png" alt="logo">
+        </div>
+        <nav class="nav">
+            <input type="checkbox" class="nav__burger" id="nav-burger">
+            <label for="nav-burger" class="nav__burger-img"></label>
+
+            <ul class="menu">
+                <li class="menu__item">
+                    <a href="" class="menu__link">Home</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#about" class="menu__link">about</a>
+                </li>
+                <li class="menu__item">
+                    <a href="" class="menu__link">works</a>
+                </li>
+                <li class="menu__item">
+                    <a href="" class="menu__link">Blog</a>
+                </li>
+                <li class="menu__item">
+                    <a href="" class="menu__link">contacts</a>
+                </li>
             </ul>
-            <button class="header__btn"></button>
+        </nav>
+        <button class="header__btn"></button>
         </nav>
         <div class="header__title">
-            <!-- <img src="./source/img/header/bg.png" alt="hero" class="title__img"> -->
-            <!-- <div class="container"> -->
-                <h1 class="title__title">Manifest is a newborn theme.
-                    Clean, simple and fast.</h1>
-            <!-- </div> -->
-        </div>
+            <img src="./source/img/header/bg.png" alt="banner" class="banner">
+            <h1 class="title-main title ">Manifest is a newborn theme.
+                Clean, simple and fast.</h1>
     </header>
-
     <main class="main">
-            <section class="section">
-                <h2 class="section__title" id="Blog">Blog</h2>
-                <article class="article">
-                    <div class="article__img">
-                        <img src="./source/img/main/section1.png" alt="sec1" class="img">
-                    </div>
-                    <div class="article__content">
-                        <h4 class="article__sup">Technology, Interface Design</h4>
-                        <h3 class="article__title">Using UX Design to Build a Sustainable Future</h3>
-                        <h4 class="article__sub">6 May, 2020</h4>
-                        <p class="article__text text">Transformation has to be driven by everybody, not just by climate groups,
-                            and we have a responsibility to use our influence to drive this.<button
-                                class="arrow__btn"></button></p>
-                    </div>
-                </article>
-                <article class="article">
-                    <div class="article__content">
-                        <h4 class="article__sup">Technology, Interface Design</h4>
-                        <h3 class="article__title">Using UX Design to Build a Sustainable Future</h3>
-                        <h4 class="article__sub">6 May, 2020</h4>
-                        <p class="article__text text">Transformation has to be driven by everybody, not just by climate groups,
-                            and we have a responsibility to use our influence to drive this.<button
-                                class="arrow__btn"></button></p>
-                    </div>
-                    <div class="article__img">
-                        <img src="./source/img/main/section2.png" alt="sec2" class="img">
-                    </div>
-                </article>
-            </section>
-            <section class="section__triple">
-                <h2 class="section__title-small">Latest Posts</h2>
-               
-            <div class="cards__triple">
+        <section class="section">
+            <h2 class="title title-section" id="Blog">Blog</h2>
+            <article class="article">
+                <div class="article__img">
+                    <img src="./source/img/main/section1.png" alt="sec1" class="img">
+                </div>
+                <div class="article__content">
+                    <h4 class="title title-sup">Technology, Interface Design</h4>
+                    <h3 class="title title-article">Using UX Design to Build a Sustainable Future</h3>
+                    <h4 class="title title-sub">6 May, 2020</h4>
+                    <p class="text">Transformation has to be driven by everybody, not just by climate
+                        groups,
+                        and we have a responsibility to use our influence to drive this.<button
+                            class="arrow__btn"></button></p>
+                </div>
+            </article>
+            <article class="article">
+                <div class="article__content">
+                    <h4 class="title title-sup">Technology, Interface Design</h4>
+                    <h3 class="title title-article">Using UX Design to Build a Sustainable Future</h3>
+                    <h4 class="title title-sub">6 May, 2020</h4>
+                    <p class="text">Transformation has to be driven by everybody, not just by climate
+                        groups,
+                        and we have a responsibility to use our influence to drive this.<button
+                            class="arrow__btn"></button></p>
+                </div>
+                <div class="article__img">
+                    <img src="./source/img/main/section2.png" alt="sec2" class="img">
+                </div>
+            </article>
+        </section>
+
+        <section class="section section-triple">
+            <h2 class="title title-arrow">Latest Posts
+                <a href="#" class="title__link">View All
+                    <img src="./source/img/main/arrow1.png">
+                </a>
+            </h2>
+            <div class="cards">
                 <div class="card">
                     <div class="card__img">
                         <img src="./source/img/main/section3_1.png" alt="section3_1">
                     </div>
-                    <div class="card__sup">
-                        <h5>Interface Design</h5>
-                        <h5>8 June, 2020</h5>
+                    <div class="card__supheader">
+                        <h5 class="title title-sup">Interface Design</h5>
+                        <h5 class="title title-sup">8 June, 2020</h5>
                     </div>
-                    <div class="card__text text">
-                        <h4 class="text__title">UX traffic light colours</h4>
+                    <div class="text">
+                        <h4 class="title title-card">UX traffic light colours</h4>
                         <p class="text">UI has to make a huge visual difference between warning, an alert and a
                             success.</p>
                     </div>
@@ -86,13 +101,13 @@
                     <div class="card__img">
                         <img src="./source/img/main/section3_2.png" alt="">
                     </div>
-                    <div class="card__sup">
-                        <h5>Technology</h5>
-                        <h5>6 May, 2020</h5>
+                    <div class="card__supheader">
+                        <h5 class="title title-sup">Technology</h5>
+                        <h5 class="title title-sup">6 May, 2020</h5>
                     </div>
-                    <div class="card__text text">
-                        <h4 class="text__title">Using UX Design to Build a Sustainable Future</h4>
-                        <p class="text__text">UI has to make a huge visual difference between warning, an alert and a
+                    <div class="text">
+                        <h4 class="title title-card">Using UX Design to Build a Sustainable Future</h4>
+                        <p class="text">UI has to make a huge visual difference between warning, an alert and a
                             success.</p>
                     </div>
                 </div>
@@ -100,33 +115,37 @@
                     <div class="card__img">
                         <img src="./source/img/main/section3_3.png" alt="">
                     </div>
-                    <div class="card__sup">
-                        <h5>Visual Design</h5>
-                        <h5>8 June, 2020</h5>
+                    <div class="card__supheader">
+                        <h5 class="title title-sup">Visual Design</h5>
+                        <h5 class="title title-sup">8 June, 2020</h5>
                     </div>
-                    <div class="card__text text">
-                        <h4 class="text__title">Creativity vs. UX</h4>
-                        <p class="text__text">Is it possible to create a delightful user experience without following
+                    <div class="text">
+                        <h4 class="title title-card">Creativity vs. UX</h4>
+                        <p class="text">Is it possible to create a delightful user experience without following
                             best
                             UX practices?</p>
                     </div>
                 </div>
             </div>
-            </section>
-            <section class="section__double">
-                <h2 class="section__title-small">The Most Popular</h2>
-            </div>
-            <div class="cards__double">
+        </section>
+
+        <section class="section section-double">
+            <h2 class="title title-arrow">The Most Popular
+                <a href="#" class="title__link">View All
+                    <img src="./source/img/main/arrow1.png">
+                </a>
+            </h2>
+            <div class="cards">
                 <div class="card card-big">
                     <div class="card__img">
                         <img src="./source/img/main/section4_1.png" alt="section4_1">
                     </div>
-                    <div class="card__sup">
-                        <h5>Interface Design</h5>
-                        <h5>8 June, 2020</h5>
+                    <div class="card__supheader">
+                        <h5 class="title title-sup">Interface Design</h5>
+                        <h5 class="title title-sup">8 June, 2020</h5>
                     </div>
-                    <div class="card__text text">
-                        <h4 class="text__title">Mentorship Match — How a simple LinkedIn feature can boost diversity
+                    <div class="text">
+                        <h4 class="text title-card">Mentorship Match — How a simple LinkedIn feature can boost diversity
                         </h4>
                         <p class="text__text">LinkedIn is on a clear mission to make professionals more successful by
                             connecting the global workforce and as we learned — diversity and success go hand in hand
@@ -137,34 +156,56 @@
                     <div class="card__img">
                         <img src="./source/img/main/section4_2.png" alt="section4_2">
                     </div>
-                    <div class="card__sup">
+                    <div class="card__supheader">
                         <h5>Visual Design</h5>
                         <h5>8 June, 2020</h5>
                     </div>
                     <div class="card__text text">
-                        <h4 class="text__title">Creativity vs. UX</h4>
+                        <h4 class="text title-card">Creativity vs. UX</h4>
                         <p class="text__text">Is it possible to create a delightful user experience without following
                             best UX practices?</p>
                     </div>
                 </div>
             </div>
-            </section>
-            <button class="learn">Learn More</button>        
-            <section class="section__info">
+        </section>
+        <button class="btn">Load More</button>
+        <section class="section section-info">
             <div class="info__title">
-                <h3 class="info__title">Full-time UI/UX designer
+                <h3 class="title">Full-time UI/UX designer
                     Head of Design at VeronaLabs.com</h3>
                 <button class="arrow__btn"></button>
             </div>
             <div class="info__text">
-                <p class="info__text">We work with clients around the world from our headquarters in Charleston, South Carolina.</p>
-                <p class="info__text">We focus on naming, branding, brand narratives, website design and development, and brand experiences.</p>
+                <p class="text">We work with clients around the world from our headquarters in Charleston, South
+                    Carolina.</p>
+                <p class="text">We focus on naming, branding, brand narratives, website design and development, and
+                    brand experiences.</p>
             </div>
-            </section>
-        
+        </section>
     </main>
 
-   
+    <footer class="footer">
+        <section class="section section-contacts">
+            <h2 class="title title-section">Need a project?</h2>
+            <p class="text">(239) 555-0108</p>
+            <p class="text">tanya.hill@example.com</p>
+        </section>
+        <section class="section section-socials">
+            <svg class="socials__svg">
+                <use xlink:href="./source/img/svg/sprites.svg#twitter"></use>
+            </svg>
+            <svg class="socials__svg">
+                <use xlink:href="./source/img/svg/sprites.svg#facebook"></use>
+            </svg>
+            <svg class="socials__svg">
+                <use xlink:href="./source/img/svg/sprites.svg#instagram"></use>
+            </svg>
+            <svg class="socials__svg">
+                <use xlink:href="./source/img/svg/sprites.svg#linkedin"></use>
+            </svg>
+        </section>
+            <p class="copyright__text">© Copyright Manifest Theme. All rights reserved</p>
+    </footer>
 </body>
 
 </html>
