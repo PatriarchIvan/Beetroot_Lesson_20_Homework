@@ -1,11 +1,12 @@
 @mixin createLine {
     content: '';
     position: absolute;
-    width: 70%;
+    width: 72%;
     height: 1px;
     background: #000;
-    left: 15%;
+    left: 50%;
     bottom: -5px;
+    transform: translateX(-50%);
 }
 
 @mixin setFontStyle ($family, $size, $weight, $color, $margin) {
