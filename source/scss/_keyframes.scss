@@ -1,0 +1,5 @@
+@keyframes bgColorAnim {
+    0%   { background: #fff; }
+    50%  { background: $main-text-color-secondary;}
+    100% { background: #fff; }
+}

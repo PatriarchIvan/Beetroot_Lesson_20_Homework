@@ -1,4 +1,4 @@
-@import 'reset', 'temps', 'vars', 'fonts', 'mixins';
+@import 'reset', 'temps', 'vars', 'fonts', 'mixins', 'keyframes';
 
 html,
 body {
@@ -9,14 +9,14 @@ body {
 
 .header {
     @extend %flexCenter;
-    position: relative;
+    @include mediaQueries();
     padding: 40px calc(50% - $content-width/2);
+    position: relative;
     flex-wrap: wrap;
 
     &__logo {
         @extend %flexCenter;
     }
-
 
     .nav {
         &__burger {
@@ -24,11 +24,13 @@ body {
 
             @media (max-width: 768px) {
                 &:checked~.menu {
-                    right: 0;
+                    top: 90px;
+                    transition: all 0.7s ease;
                 }
 
                 &:checked~.nav__burger-img {
                     transform: rotate(45deg);
+                    transition: transform .8s ease;
 
                     &::before {
                         visibility: hidden;
@@ -75,6 +77,10 @@ body {
                     cursor: pointer;
                 }
             }
+
+            @media (max-width: 620px) {
+                right: 1vw;
+            }
         }
 
         .menu {
@@ -84,14 +90,14 @@ body {
 
             @media (max-width: 768px) {
                 position: absolute;
-                right: -100%;
-                top: 100px;
-                width: 50%;
-                // min-width: 300px;
                 flex-direction: column;
+                width: 100%;
+                right: 0;
+                top: -100%;
                 gap: 15px;
                 z-index: 1;
-                background: #ad2f2f;
+                background: #fff;
+                animation: bgColorAnim 5s infinite linear;
             }
 
             &__item {
@@ -100,7 +106,6 @@ body {
                 @media (max-width: 768px) {
                     padding: 20px 10px;
                     text-align: center;
-
                 }
 
             }
@@ -119,10 +124,21 @@ body {
                     }
                 }
 
+                @media (max-width: 768px) {
+                    &:hover {
+                        cursor: pointer;
+                        color: #530003;
+
+                        &::after {
+                            @include createLine;
+                            bottom: 5px;
+                        }
+                    }
+                }
+
             }
         }
     }
-
 
     &__btn {
         background: url('../source/img/header/search.png') no-repeat center;
@@ -136,29 +152,83 @@ body {
             z-index: -1;
             top: 100px;
             left: 0;
-            width: 100vw;
+            height: 600px;
+            width: 100%;
+
+            @media (max-width: 768px) {
+                width: 768px;
+                height: 320px;
+            }
+
+            @media (max-width: 320px) {
+                width: 320px;
+                height: 500px;
+            }
         }
+
     }
 }
 
 .main {
-    padding: 40px calc(50% - $content-width/2);
+    @include mediaQueries();
+    padding: 150px calc(50% - $content-width/2);
 
     .article {
         @include setFontStyle ('Lato', 16px, 400, $main-text-color-secondary, 0);
         @extend %flexCenter;
+        margin-bottom: 40px;
+
+        @media (max-width: 320px) {
+            flex-direction: column;
+        }
 
         &__content {
             @extend %flexCenter;
             align-items: flex-start;
             flex-direction: column;
             padding: 30px 85px 120px 85px;
+
+            @media (max-width: 1200px) {
+                padding: 10px 30px 20px 20px;
+            }
+
+            @media (max-width: 768px) {
+                padding: 0 20px;
+            }
+
+            @media (max-width: 320px) {
+                padding: 10px 10px;
+            }
+        }
+
+        &__img {
+            @media (max-width: 320px) {
+                order: 1;
+            }
         }
     }
 
     .cards {
         @extend %flexCenter;
         gap: 30px;
+
+        &-triple {
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
+
+            & .card {
+                @media (max-width: 768px) {
+                    flex-direction: row;
+                    margin-bottom: 0;
+                    height: 100%;
+                }
+
+                @media (max-width: 320px) {
+                    flex-wrap: wrap;
+                }
+            }
+        }
     }
 
     .card {
@@ -178,6 +248,7 @@ body {
             @include setFontStyle('Lato', 0.75rem, 400, $main-text-color-secondary, 0);
             align-items: initial;
             width: 100%;
+
         }
     }
 
@@ -208,36 +279,81 @@ body {
         }
     }
 
-    .section-info {
-        @extend %flexCenter;
-        margin-bottom: 90px;
+    .section {
+        &.section-info {
+            @extend %flexCenter;
 
-        .info__title {
-            max-width: 450px;
-            @include setFontStyle ('Red Hat Display', 1.43rem, 500, $main-text-color-secondary, 20px);
-        }
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
 
-        .info__text {
-            max-width: 470px;
-            font-size: 1.1875rem;
+            .info__title {
+                max-width: 450px;
+                @include setFontStyle ('Red Hat Display', 1.43rem, 500, $main-text-color-secondary, 20px);
 
-            &>p {
-                margin-bottom: 30px;
+                @media (max-width: 768px) {
+                    align-self: flex-start;
+                    text-align: left;
+                }
+            }
+
+            .info__text {
+                max-width: 470px;
+                font-size: 1.1875rem;
+
+                @media (max-width: 768px) {
+                    align-self: flex-end;
+                    text-align: end;
+                }
+
+                @media (max-width: 320px) {
+                    text-align: center;
+                }
+
+                &>p {
+                    margin-bottom: 30px;
+                }
             }
         }
+
+        &.section-double {
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
+        }
+
     }
+
 }
 
 .footer {
     @extend %flexCenter;
-    max-width: 1070px;
+    @include mediaQueries();
     flex-wrap: wrap;
-    margin: 0 auto;
+    padding: 0 calc(50% - $content-width/2);
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    @media (max-width: 320px) {
+        text-align: center;
+    }
 
     & .section-contacts {
         @extend %flexCenter;
         flex-direction: column;
         align-items: flex-start;
+
+        @media (max-width: 768px) {
+            margin-bottom: 50px;
+        }
+        @media (max-width: 320px) {
+            gap:25px;
+            align-items: center;
+        }
     }
 
     & .copyright__text {
@@ -260,12 +376,17 @@ body {
             border: 1px solid #565656;
             background: #fff;
             fill: #565656;
+            transition: all 0.3s ease;
 
             &:hover {
                 fill: #fff;
                 background: #565656;
                 cursor: pointer;
+                transform: scale(1.2);
             }
+        }
+        @media (max-width: 320px) {
+            margin-bottom: 40px;
         }
     }
 
@@ -278,18 +399,19 @@ body {
         @include setFontStyle ('Red Hat Display', 3rem, 600, #000, 0);
         max-width: 770px;
         margin-top: 100px;
-        margin-bottom: 50%;
+        margin-bottom: 35%;
         position: relative;
         width: 100%;
 
         @media (max-width: 768px) {
             font-size: 2.25rem;
-            margin-top: 40px;
+            margin-top: 50px;
+            margin-bottom: 55%;
         }
 
-        @media (max-width: 340px) {
+        @media (max-width: 320px) {
             font-size: 1.875rem;
-            margin-top: 20px;
+            margin-bottom: 130%;
         }
     }
 
@@ -297,14 +419,41 @@ body {
         @include setFontStyle ('Red Hat Display', 3rem, 400, #000, 50px);
         align-self: flex-start;
         margin: 100px 0 50px 0;
+
+        @media (max-width: 768px) {
+            font-size: 2.25rem;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 340px) {
+            font-size: 1.875rem;
+            margin: 0px;
+        }
     }
 
     &-article {
         @include setFontStyle ('Red Hat Display', 1.43rem, 500, #000, 50px);
+
+        @media (max-width: 1200px) {
+            margin: 5px 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            margin: 0 0 5px 0;
+        }
     }
 
     &-sub {
         margin: 15px 0 50px 0;
+
+        @media (max-width: 1200px) {
+            margin: 5px 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            margin: 0;
+            line-height: 1;
+        }
     }
 
     &-card {
@@ -316,6 +465,11 @@ body {
         @include setFontStyle ('Red Hat Display', 1.75rem, 600, #000, 50px);
         width: 100%;
         margin-top: 90px;
+
+        @media (max-width: 768px) {
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
     }
 
     &__link {
@@ -324,6 +478,53 @@ body {
 
         &>img {
             margin-left: 10px
+        }
+    }
+}
+
+.img {
+    &-normal {
+        width: 570px;
+        height: 470px;
+
+        @media (max-width: 768px) {
+            width: 340px;
+            height: 280px;
+        }
+
+        @media (max-width: 320px) {
+            width: 300px;
+            height: 250px;
+        }
+    }
+
+    &-triple {
+        width: 370px;
+        height: 260px;
+
+        @media (max-width: 768px) {
+            width: 340px;
+            height: 240px;
+        }
+
+        @media (max-width: 320px) {
+            width: 300px;
+            height: 210px;
+        }
+    }
+
+    &-wide {
+        width: 570px;
+        height: 260px;
+
+        @media (max-width: 768px) {
+            width: 340px;
+            height: 160px;
+        }
+
+        @media (max-width: 320px) {
+            width: 300px;
+            height: 150px;
         }
     }
 }

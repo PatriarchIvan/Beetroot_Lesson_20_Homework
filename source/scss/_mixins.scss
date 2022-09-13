@@ -16,3 +16,16 @@
     color:$color;
     margin-bottom: $margin;
 }
+
+@mixin mediaQueries {
+        @media (max-width: 1200px) {
+            padding: 40px calc(50% - 960px/2);
+        }
+        @media (max-width: 768px) {
+            padding: 10px 35px;
+        }
+        @media (max-width: 320px) {
+            padding: 5px 10px;
+        }
+    
+}
