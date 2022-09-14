@@ -17,7 +17,7 @@
     margin-bottom: $margin;
 }
 
-@mixin mediaQueries {
+@mixin mediaQueriesSize {
         @media (max-width: 1200px) {
             padding: 40px calc(50% - 960px/2);
         }
@@ -27,5 +27,84 @@
         @media (max-width: 320px) {
             padding: 5px 10px;
         }
-    
+}
+
+@mixin mediaQueriesBurger {
+    @media (max-width: 768px) {
+        position: relative;
+        display: inline-block;
+        width: 32px;
+        height: 3px;
+        background: #000;
+        top: 0;
+        right: -25vw;
+        vertical-align: middle;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: 100%;
+            height: 3px;
+            background: #000;
+            top: 8px;
+
+        }
+
+        &::after {
+            top: -8px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width: 620px) {
+        right: -20vw;
+    }
+    @media (max-width: 500px) {
+        right: -5vw;
+    }
+    @media (max-width: 320px) {
+        right: 0vw;
+    }
+}
+
+@mixin mediaQueriesBurgerButton {
+    @media (max-width: 768px) {
+        &:checked~.menu {
+            top: 90px;
+            transition: all 0.7s ease;
+        }
+
+        &:checked~.nav__burger-img {
+            transform: rotate(45deg);
+            transition: transform .8s ease;
+
+            &::before {
+                visibility: hidden;
+            }
+
+            &::after {
+                transform: rotate(90deg);
+                top: 0;
+            }
+        }
+    }
+}
+
+@mixin mediaQueriesBurgerMenu {
+    @media (max-width: 768px) {
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        right: 0;
+        top: -100%;
+        gap: 15px;
+        z-index: 1;
+        background: #fff;
+        animation: bgColorAnim 5s infinite linear;
+    }
 }

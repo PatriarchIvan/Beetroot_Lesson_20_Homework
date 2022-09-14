@@ -382,6 +382,11 @@ body {
 .main .cards {
   gap: 30px;
 }
+@media (max-width: 400px) {
+  .main .cards {
+    gap: 5px;
+  }
+}
 @media (max-width: 768px) {
   .main .cards-triple {
     -webkit-box-orient: vertical;
@@ -397,7 +402,6 @@ body {
         -ms-flex-direction: row;
             flex-direction: row;
     margin-bottom: 0;
-    height: 100%;
   }
   .main .cards-triple .card:nth-of-type(2n) .card__img {
     -webkit-box-ordinal-group: 2;
@@ -434,6 +438,18 @@ body {
   padding-bottom: 60px;
   height: 500px;
   gap: 25px;
+}
+@media (max-width: 768px) {
+  .main .card {
+    padding-bottom: 20px;
+    height: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .main .card {
+    padding-bottom: 15px;
+    gap: 2px;
+  }
 }
 .main .card__supheader {
   font-family: "Lato";
@@ -533,6 +549,11 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+}
+@media (max-width: 320px) {
+  .main .text {
+    padding: 10px;
   }
 }
 
@@ -681,13 +702,14 @@ body {
 @media (max-width: 768px) {
   .title-section {
     font-size: 2.25rem;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 }
 @media (max-width: 340px) {
   .title-section {
     font-size: 1.875rem;
-    margin: 10px;
+    text-align: center;
+    margin: 50px 0 30px 0;
   }
 }
 .title-article {
