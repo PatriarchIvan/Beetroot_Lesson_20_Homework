@@ -687,7 +687,7 @@ body {
 @media (max-width: 340px) {
   .title-section {
     font-size: 1.875rem;
-    margin: 0px;
+    margin: 10px;
   }
 }
 .title-article {
