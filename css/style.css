@@ -198,7 +198,17 @@ body {
 }
 @media (max-width: 620px) {
   .header .nav__burger-img {
-    right: 1vw;
+    right: -20vw;
+  }
+}
+@media (max-width: 500px) {
+  .header .nav__burger-img {
+    right: -5vw;
+  }
+}
+@media (max-width: 320px) {
+  .header .nav__burger-img {
+    right: 0vw;
   }
 }
 .header .nav .menu {
@@ -389,11 +399,28 @@ body {
     margin-bottom: 0;
     height: 100%;
   }
+  .main .cards-triple .card:nth-of-type(2n) .card__img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
 }
 @media (max-width: 320px) {
   .main .cards-triple .card {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+  .main .cards-triple .card:nth-of-type(2n) .card__img {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+}
+@media (max-width: 620px) {
+  .main .cards-big {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 10px;
   }
 }
 .main .card {
@@ -407,9 +434,6 @@ body {
   padding-bottom: 60px;
   height: 500px;
   gap: 25px;
-}
-.main .card-big {
-  gap: 33px;
 }
 .main .card__supheader {
   font-family: "Lato";
@@ -613,6 +637,11 @@ body {
 
 .title {
   line-height: 38.18px;
+}
+@media (max-width: 600px) {
+  .title {
+    line-height: 1;
+  }
 }
 .title-main {
   font-family: "Red Hat Display";

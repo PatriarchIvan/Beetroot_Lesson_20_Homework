@@ -79,7 +79,13 @@ body {
             }
 
             @media (max-width: 620px) {
-                right: 1vw;
+                right: -20vw;
+            }
+            @media (max-width: 500px) {
+                right: -5vw;
+            }
+            @media (max-width: 320px) {
+                right: 0vw;
             }
         }
 
@@ -222,13 +228,27 @@ body {
                     flex-direction: row;
                     margin-bottom: 0;
                     height: 100%;
+                    &:nth-of-type(2n) .card__img{
+                        order: 1;
+                    }
                 }
 
                 @media (max-width: 320px) {
                     flex-wrap: wrap;
+                    &:nth-of-type(2n) .card__img{
+                        order: 0;
+                    }
                 }
             }
         }
+
+        &-big {
+            @media (max-width: 620px) {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+
     }
 
     .card {
@@ -239,16 +259,12 @@ body {
         height: 500px;
         gap: 25px;
 
-        &-big {
-            gap: 33px;
-        }
 
         &__supheader {
             @extend %flexCenter;
             @include setFontStyle('Lato', 0.75rem, 400, $main-text-color-secondary, 0);
             align-items: initial;
             width: 100%;
-
         }
     }
 
@@ -394,6 +410,9 @@ body {
 
 .title {
     line-height: 38.18px;
+    @media (max-width: 600px) {
+        line-height: 1;
+    }
 
     &-main {
         @include setFontStyle ('Red Hat Display', 3rem, 600, #000, 0);
